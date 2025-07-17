@@ -28,3 +28,8 @@ body{
     border: 2px solid rgb(122, 122, 184);
     border-radius: 7px;
 }
+.snake-head{
+    background-color: #ff979e;
+    border: 2px solid red;
+    border-radius: 3px;
+}
