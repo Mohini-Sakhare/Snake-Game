@@ -9,4 +9,7 @@ A modern take on the classic Snake game, built with HTML, CSS, and JavaScript. F
   - 🟧 Snake Head – Orange
   - 🟦 Snake Body – Blue
 - **Controls:** Reset button for quick game restart.
+up,down,left,right keys for mobile.
+
+-**create Responsive Game functionality.
 
