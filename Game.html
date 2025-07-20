@@ -5,15 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <link rel="stylesheet" href="Game.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
 </head>
 <body>
     <div class="board">
-         <div class="food" style="grid-area: 2/3;"></div> 
-        <!-- <div class="snake-head" style="grid-area: 4/5;"></div> --> 
     </div>
-     <div class="btn">
-            <button onclick="reset()">Reset</button>
-         </div>
+    <div class="keys">
+        <div class="left">
+            <button class="arrow"><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+
+        <div class="up-down">
+           <div class="up">
+            <button class="arrow"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+         
+        <div class="down">
+            <button class="arrow"><i class="fa-solid fa-arrow-down"></i></button>
+        </div>
+        </div>
+        
+        
+        <div class="right">
+            <button class="arrow"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+    
+    <div>
+        <button class="btn" onclick="reset()">Reset</button>
+    </div>
     <script src="Game.js"></script>
 </body>
 </html>
