@@ -56,10 +56,10 @@ snakeBody[0]=[SnakeX,SnakeY]
   SnakeY+=velocityY;
   
   for(let i=0; i<snakeBody.length; i++){
-     setHtml += `<div class="snake-head" style="grid-area: ${snakeBody[i][1]}/${snakeBody[i][0]};"></div>`;
+     setHtml += `<div class="snake-head" id="div${i}" style="grid-area: ${snakeBody[i][1]}/${snakeBody[i][0]};"></div>`;
 
      if(i!=0 && snakeBody[0][1]===snakeBody[i][1] &&  snakeBody[0][0]===snakeBody[i][0]){
-
+        gameOver=true;
      } 
   }
  
