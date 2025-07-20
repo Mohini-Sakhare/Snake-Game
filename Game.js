@@ -30,15 +30,16 @@ function moveSnake(e){
   }
   main();
 }
+
  function showGameOver(){
-  if(gameOver){
-     clearInterval(setIntervalId)
-   document.removeEventListener("keydown", moveSnake)
-  }
-  
+    clearInterval(setIntervalId)
+    document.removeEventListener("keydown", moveSnake)
  }
 
 function main() {
+  if(gameOver){
+    return showGameOver()
+  }
   
  if(SnakeX===FoodX && SnakeY===FoodY){
     randomFoodPosition();
@@ -50,11 +51,16 @@ function main() {
   snakeBody[i]=snakeBody[i-1]
  }
 let setHtml = `<div class="food" style="grid-area: ${FoodY}/${FoodX}; "></div>`;
+snakeBody[0]=[SnakeX,SnakeY]
   SnakeX+=velocityX;
   SnakeY+=velocityY;
-  snakeBody[0]=[SnakeX,SnakeY]
+  
   for(let i=0; i<snakeBody.length; i++){
      setHtml += `<div class="snake-head" style="grid-area: ${snakeBody[i][1]}/${snakeBody[i][0]};"></div>`;
+
+     if(i!=0 && snakeBody[0][1]===snakeBody[i][1] &&  snakeBody[0][0]===snakeBody[i][0]){
+
+     } 
   }
  
   if(SnakeX<=0 || SnakeX>24 || SnakeY<=0 || SnakeY>24){
@@ -64,7 +70,6 @@ let setHtml = `<div class="food" style="grid-area: ${FoodY}/${FoodX}; "></div>`;
   board.innerHTML = setHtml;
 }
 randomFoodPosition();
-setIntervalId = setInterval(main, 300)
 main();
-
+setIntervalId = setInterval(main, 300)
 document.addEventListener("keydown", moveSnake)
