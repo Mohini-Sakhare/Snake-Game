@@ -13,8 +13,8 @@ let eatSound = new Audio("Eat.mp3");
 let turnSound = new Audio("Turn.mp3");
 
 function randomFoodPosition() {
-  FoodX = Math.floor(Math.random() * 24) + 1;
-  FoodY = Math.floor(Math.random() * 24) + 1;
+  FoodX = Math.floor(Math.random() * 14) + 1;
+  FoodY = Math.floor(Math.random() * 14) + 1;
 }
 
 function moveSnake(e){
@@ -73,7 +73,7 @@ let setHtml = `<div class="food" style="grid-area: ${FoodY}/${FoodX}; "></div>`;
      } 
   }
  
-  if(SnakeX<=0 || SnakeX>24 || SnakeY<=0 || SnakeY>24){
+  if(SnakeX<=0 || SnakeX>14 || SnakeY<=0 || SnakeY>14){
     gameOver=true;
   }
 
