@@ -11,6 +11,7 @@ let setIntervalId;
 let gameOverSound = new Audio("GameOver.mp3");
 let eatSound = new Audio("Eat.mp3");
 let turnSound = new Audio("Turn.mp3");
+let keys=document.querySelectorAll(".key")
 
 function randomFoodPosition() {
   FoodX = Math.floor(Math.random() * 14) + 1;
@@ -37,11 +38,15 @@ function moveSnake(e){
   }
   main();
 }
+keys.forEach((key)=>{
+  key.addEventListener("click",()=>moveSnake({key:key.dataset.key}))
+})
 
 function showGameOver(){
     clearInterval(setIntervalId);
     gameOverSound.play();
     document.removeEventListener("keydown", moveSnake);
+    turnSound.pause();
 }
 
 function main() {
